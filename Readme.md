@@ -26,17 +26,21 @@ For this project I will use Windows OS and Powershell as the command line interf
 
 # How to run the project
 
+In order to simplify the execution of the project I have created a makefile with the following commands:
+
 To run the tests:
 
 ```
-mvn test
+make test
 ```
 
 To start the application:
 
 ```
-mvn exec:java
+mvn build
+make run
 ```
+You can check the different commands with `make help`.
 
 
 # Future improvements
