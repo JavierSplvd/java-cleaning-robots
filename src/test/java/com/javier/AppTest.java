@@ -1,8 +1,11 @@
 package com.javier;
 
-import junit.framework.TestCase;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class AppTest extends TestCase {
+import org.junit.jupiter.api.Test;
+
+public class AppTest {
+    @Test
     public void testApp() {
         App.main(null);
         assertTrue(true);
