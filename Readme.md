@@ -39,7 +39,7 @@ make test
 To start the application:
 
 ```
-mvn build
+make build
 make run
 ```
 You can check the different commands with `make help`.
