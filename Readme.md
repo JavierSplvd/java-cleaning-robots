@@ -1,5 +1,7 @@
 # Cleaning Robots Project
 
+[![codecov](https://codecov.io/gh/JavierSplvd/tasks-app-cli/graph/badge.svg?token=V3CCIB5V3Z)](https://codecov.io/gh/JavierSplvd/tasks-app-cli)
+
 This is my solution 
 
 I have used Java 20.
