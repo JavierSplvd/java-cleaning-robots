@@ -1,4 +1,4 @@
-package com.javier.entities;
+package com.javier.enums;
 
 public enum Heading {
     NORTH,

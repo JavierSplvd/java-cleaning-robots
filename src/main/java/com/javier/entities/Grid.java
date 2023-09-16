@@ -2,7 +2,6 @@ package com.javier.entities;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Grid {
     private int maxX;
@@ -23,16 +22,23 @@ public class Grid {
         return maxY;
     }
 
-    public void addCleaningRobot(CleaningRobot cleaningRobot) {
-        boolean outOfBounds = cleaningRobot.x() > maxX || cleaningRobot.y() > maxY;
+    private boolean isPositionValid(int x, int y) {
+        boolean outOfBounds = x > maxX || y > maxY;
         if (outOfBounds) {
-            throw new RuntimeException("Cannot add robot outside of grid");
+            return false;
         }
         for (CleaningRobot robot : cleaningRobots) {
-            boolean samePosition = robot.x() == cleaningRobot.x() && robot.y() == cleaningRobot.y();
+            boolean samePosition = robot.x() == x && robot.y() == y;
             if (samePosition) {
-                throw new RuntimeException("Cannot add robot to the same coordinates as another robot");
+                return false;
             }
+        }
+        return true;
+    }
+
+    public void addCleaningRobot(CleaningRobot cleaningRobot) {
+        if (!isPositionValid(cleaningRobot.x(), cleaningRobot.y())) {
+            throw new IllegalArgumentException("Invalid position");
         }
         cleaningRobots.add(cleaningRobot);
     }

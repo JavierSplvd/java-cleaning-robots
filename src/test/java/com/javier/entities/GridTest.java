@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import com.javier.enums.Heading;
+
 public class GridTest {
     private Grid grid = new Grid(5, 5);
 
