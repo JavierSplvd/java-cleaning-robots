@@ -20,10 +20,10 @@ jobs:
         java-version: '20'
 
     - name: Build with Maven
-      run: mvn clean install -DskipTests=false
+      run: make build
 
     - name: Run tests and generate coverage report
-      run: mvn test jacoco:report
+      run: make test
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
@@ -31,4 +31,4 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}  # You need to add this secret to your repository settings
 
     - name: Cleanup
-      run: mvn clean
+      run: make clean

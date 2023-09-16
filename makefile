@@ -23,7 +23,7 @@ run:
 
 # Run unit tests using Maven
 test:
-	mvn test
+	mvn test jacoco:report
 
 # Clean build artifacts
 clean:
