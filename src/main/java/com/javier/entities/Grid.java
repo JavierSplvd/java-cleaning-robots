@@ -1,6 +1,8 @@
 package com.javier.entities;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Grid {
     private int maxX;
@@ -10,7 +12,7 @@ public class Grid {
     public Grid(int maxX, int maxY) {
         this.maxX = maxX;
         this.maxY = maxY;
-        this.cleaningRobots = List.of();
+        this.cleaningRobots = new ArrayList<>(maxX * maxY);
     }
 
     public int getMaxX() {
@@ -32,7 +34,7 @@ public class Grid {
                 throw new RuntimeException("Cannot add robot to the same coordinates as another robot");
             }
         }
-        cleaningRobots = List.of(cleaningRobot, cleaningRobot);
+        cleaningRobots.add(cleaningRobot);
     }
 
     public List<CleaningRobot> getCleaningRobots() {
