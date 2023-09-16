@@ -1,6 +1,6 @@
 # Cleaning Robots Project
 
-[![codecov](https://codecov.io/gh/JavierSplvd/java-cleaning-robots/graph/badge.svg?token=1234)](https://codecov.io/gh/JavierSplvd/java-cleaning-robots)
+[![codecov](https://codecov.io/gh/JavierSplvd/java-cleaning-robots/graph/badge.svg?token=0JXJYC79OD)](https://codecov.io/gh/JavierSplvd/java-cleaning-robots)
 
 This is my solution 
 
