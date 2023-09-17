@@ -11,11 +11,6 @@ public class CleaningRobot {
         this.heading = heading;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%d %d %s", position.x(), position.y(), heading);
-    }
-
     public Vector2 position() {
         return position;
     }
@@ -41,7 +36,6 @@ public class CleaningRobot {
                 break;
             case W:
                 heading = Heading.S;
-                break;
         }
     }
 
@@ -58,7 +52,6 @@ public class CleaningRobot {
                 break;
             case W:
                 heading = Heading.N;
-                break;
         }
     }
 

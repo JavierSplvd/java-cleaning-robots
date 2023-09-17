@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import com.javier.enums.Heading;
 
-public class GridTest {
+public class FactoryFloorGridTest {
     private FactoryFloorGrid grid = new FactoryFloorGrid(5, 5);
 
     @Test
@@ -37,6 +37,18 @@ public class GridTest {
         grid.addCleaningRobot(cleaningRobot1);
         // check an exception is thrown
         assertThrows(Exception.class, () -> grid.addCleaningRobot(cleaningRobot2));
+    }
+
+    @Test
+    public void givenTextInput_shouldCreateInstance() {
+        FactoryFloorGrid grid = FactoryFloorGrid.of("5 5");
+        assertTrue(grid.getMaxX() == 5);
+        assertTrue(grid.getMaxY() == 5);
+    }
+
+    @Test
+    public void givenWrongInput_shouldThrow() {
+        assertThrows(Exception.class, () -> FactoryFloorGrid.of("5"));
     }
 
 }

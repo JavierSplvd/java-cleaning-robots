@@ -1,5 +1,7 @@
 package com.javier.entities;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 import com.javier.enums.Heading;
@@ -92,5 +94,19 @@ public class CleaningRobotTest {
         cleaningRobotWest.rotateRight();
 
         assert cleaningRobotWest.heading() == Heading.N;
+    }
+
+    @Test
+    public void givenTextInput_shouldCreateInstance() {
+        CleaningRobot cleaningRobot = CleaningRobot.of("1 1 N");
+
+        assert cleaningRobot.position().x() == 1;
+        assert cleaningRobot.position().y() == 1;
+        assert cleaningRobot.heading() == Heading.N;
+    }
+
+    @Test
+    public void givenIncorrectTextInput_shouldThrow() {
+        assertThrows(Exception.class, () -> CleaningRobot.of("abc"));
     }
 }
