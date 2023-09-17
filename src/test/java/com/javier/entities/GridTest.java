@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import com.javier.enums.Heading;
 
 public class GridTest {
-    private Grid grid = new Grid(5, 5);
+    private FactoryFloorGrid grid = new FactoryFloorGrid(5, 5);
 
     @Test
     public void whenWithinBounds_shouldAddRobots() {

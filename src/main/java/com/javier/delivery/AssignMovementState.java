@@ -1,13 +1,13 @@
 package com.javier.delivery;
 
 import com.javier.entities.CleaningRobot;
-import com.javier.entities.Grid;
+import com.javier.entities.FactoryFloorGrid;
 import com.javier.entities.MoveForwardAction;
 
 public class AssignMovementState implements CliState {
-    private final Grid grid;
+    private final FactoryFloorGrid grid;
 
-    public AssignMovementState(Grid grid) {
+    public AssignMovementState(FactoryFloorGrid grid) {
         this.grid = grid;
     }
 
@@ -37,7 +37,7 @@ public class AssignMovementState implements CliState {
     }
 
     @Override
-    public Grid getGrid() {
+    public FactoryFloorGrid getGrid() {
         return grid;
     }
 

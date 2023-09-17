@@ -1,19 +1,19 @@
 package com.javier.delivery;
 
-import com.javier.entities.Grid;
+import com.javier.entities.FactoryFloorGrid;
 
 public class CreateGridState implements CliState {
-    private Grid grid;
+    private FactoryFloorGrid grid;
 
     @Override
     public CliState input(String input) {
-        Grid newGrid = Grid.of(input);
+        FactoryFloorGrid newGrid = FactoryFloorGrid.of(input);
         grid = newGrid;
         return new CreateRobotState(grid);
     }
 
     @Override
-    public Grid getGrid() {
+    public FactoryFloorGrid getGrid() {
         return grid;
     }
 

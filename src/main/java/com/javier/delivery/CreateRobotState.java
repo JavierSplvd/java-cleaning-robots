@@ -1,12 +1,12 @@
 package com.javier.delivery;
 
 import com.javier.entities.CleaningRobot;
-import com.javier.entities.Grid;
+import com.javier.entities.FactoryFloorGrid;
 
 public class CreateRobotState implements CliState {
-    private final Grid grid;
+    private final FactoryFloorGrid grid;
 
-    public CreateRobotState(Grid grid) {
+    public CreateRobotState(FactoryFloorGrid grid) {
         this.grid = grid;
     }
 
@@ -22,7 +22,7 @@ public class CreateRobotState implements CliState {
     }
 
     @Override
-    public Grid getGrid() {
+    public FactoryFloorGrid getGrid() {
         return grid;
     }
 

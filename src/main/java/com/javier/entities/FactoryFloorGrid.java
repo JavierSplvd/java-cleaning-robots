@@ -3,12 +3,12 @@ package com.javier.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Grid {
+public class FactoryFloorGrid {
     private int maxX;
     private int maxY;
     private List<CleaningRobot> cleaningRobots;
 
-    public Grid(int maxX, int maxY) {
+    public FactoryFloorGrid(int maxX, int maxY) {
         this.maxX = maxX;
         this.maxY = maxY;
         this.cleaningRobots = new ArrayList<>(maxX * maxY);
@@ -50,10 +50,10 @@ public class Grid {
         return cleaningRobots;
     }
 
-    public static Grid of(String sizeAsText) {
+    public static FactoryFloorGrid of(String sizeAsText) {
         String[] size = sizeAsText.split(" ");
         int maxX = Integer.parseInt(size[0]);
         int maxY = Integer.parseInt(size[1]);
-        return new Grid(maxX, maxY);
+        return new FactoryFloorGrid(maxX, maxY);
     }
 }
