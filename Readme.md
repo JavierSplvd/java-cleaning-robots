@@ -2,11 +2,9 @@
 
 [![codecov](https://codecov.io/gh/JavierSplvd/java-cleaning-robots/graph/badge.svg?token=0JXJYC79OD)](https://codecov.io/gh/JavierSplvd/java-cleaning-robots)
 
-This is my solution 
+This is my solution for the exercise of the cleaning robots. I have used Java 20 as the programming language and JUnit 5 for the tests.
 
-I have used Java 20.
-
-The code is split into
+The code is split into entities, usecases and adapters. The entities are the objects that represent the domain of the problem. The usecases are the different actions that can be performed in the domain. And the adapters are the different implementations of the interfaces that are needed to run the usecases, the user will interact with the application through one of these adapters.
 
 # Requirements
 
@@ -15,7 +13,7 @@ For this project I will use Windows OS and Powershell as the command line interf
 - Windows 10
 - Powershell
 - openjdk 20.0.1
-- Visual Studio Code 1.80.1
+- Visual Studio Code 1.82.2
 
 # Technical requirements
 

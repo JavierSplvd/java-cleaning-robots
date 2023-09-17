@@ -22,7 +22,7 @@ public class Grid {
         return maxY;
     }
 
-    private boolean isPositionValid(int x, int y) {
+    public boolean isPositionValid(int x, int y) {
         boolean outOfBounds = x > maxX || y > maxY;
         if (outOfBounds) {
             return false;
