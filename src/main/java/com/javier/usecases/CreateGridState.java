@@ -7,9 +7,13 @@ public class CreateGridState implements CliState {
 
     @Override
     public CliState input(String input) {
-        FactoryFloorGrid newGrid = FactoryFloorGrid.of(input);
-        grid = newGrid;
-        return new CreateRobotState(grid);
+        try {
+            FactoryFloorGrid newGrid = FactoryFloorGrid.of(input);
+            grid = newGrid;
+            return new CreateRobotState(grid);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Invalid input.");
+        }
     }
 
     @Override

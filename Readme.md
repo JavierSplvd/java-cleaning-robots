@@ -48,4 +48,5 @@ You can check the different commands with `make help`.
 
 1. The rotation could implement a 2x2 matrix to multiplicate to the Vector2 position. This could enable the robot to rotate in any direction and use a continuous space for the factory floor.
 2. Render the whole floor with the empty cells of the grid and the robots with their direction.
+3. Better and more consistent error handling.
 
