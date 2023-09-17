@@ -2,9 +2,9 @@ package com.javier;
 
 import java.util.Scanner;
 
-import com.javier.delivery.CliState;
-import com.javier.delivery.CreateGridState;
 import com.javier.delivery.Renderer;
+import com.javier.usecases.CliState;
+import com.javier.usecases.CreateGridState;
 
 public class App {
     public static void main(String[] args) {

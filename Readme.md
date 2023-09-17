@@ -4,7 +4,7 @@
 
 This is my solution for the exercise of the cleaning robots. I have used Java 20 as the programming language and JUnit 5 for the tests.
 
-The code is split into entities, usecases and adapters. The entities are the objects that represent the domain of the problem. The usecases are the different actions that can be performed in the domain. And the adapters are the different implementations of the interfaces that are needed to run the usecases, the user will interact with the application through one of these adapters.
+The code is split into entities and delivery. The entities are the objects that are used in the application, like the robot or the factory. The delivery is the code that is used to run the application, like the input handling.
 
 # Requirements
 
@@ -40,7 +40,12 @@ To start the application:
 make build
 make run
 ```
+
 You can check the different commands with `make help`.
 
 
 # Future improvements
+
+1. The rotation could implement a 2x2 matrix to multiplicate to the Vector2 position. This could enable the robot to rotate in any direction and use a continuous space for the factory floor.
+2. Render the whole floor with the empty cells of the grid and the robots with their direction.
+

@@ -1,4 +1,4 @@
-package com.javier.delivery;
+package com.javier.usecases;
 
 import com.javier.entities.CleaningRobot;
 import com.javier.entities.FactoryFloorGrid;
@@ -13,6 +13,10 @@ public class AssignMovementState implements CliState {
 
     @Override
     public CliState input(String input) {
+        if(grid.getCleaningRobots().isEmpty()) {
+            System.out.println("No robots to move.");
+            return this;
+        }
         CleaningRobot robot = grid.getCleaningRobots().get(grid.getCleaningRobots().size() - 1);
         for (char c : input.toCharArray()) {
             switch (c) {
