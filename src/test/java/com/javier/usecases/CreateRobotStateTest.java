@@ -5,13 +5,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 import com.javier.entities.FactoryFloorGrid;
-import com.javier.enums.Heading;
+import com.javier.utils.Heading;
 
 public class CreateRobotStateTest {
     @Test
     public void whenInput_shouldReturnAssignMovementState() {
         FactoryFloorGrid grid = FactoryFloorGrid.of("5 5");
-        CliState state = new CreateRobotState(grid);
+        State state = new CreateRobotState(grid);
 
         state = state.input("2 2 W");
 
@@ -26,7 +26,7 @@ public class CreateRobotStateTest {
     @Test
     public void givenWrongInput_shouldThrow() {
         FactoryFloorGrid grid = FactoryFloorGrid.of("5 5");
-        CliState state = new CreateRobotState(grid);
+        State state = new CreateRobotState(grid);
 
         assertThrows(IllegalArgumentException.class, () -> {
             state.input("abc");

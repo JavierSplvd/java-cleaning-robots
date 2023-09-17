@@ -1,4 +1,4 @@
-package com.javier.entities;
+package com.javier.utils;
 
 public class Vector2 {
     private final int x;

@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-import com.javier.enums.Heading;
+import com.javier.utils.Heading;
 
 public class CleaningRobotTest {
     @Test

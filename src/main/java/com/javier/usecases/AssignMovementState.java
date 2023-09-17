@@ -4,7 +4,7 @@ import com.javier.entities.CleaningRobot;
 import com.javier.entities.FactoryFloorGrid;
 import com.javier.entities.MoveForwardAction;
 
-public class AssignMovementState implements CliState {
+public class AssignMovementState implements State {
     private final FactoryFloorGrid grid;
 
     public AssignMovementState(FactoryFloorGrid grid) {
@@ -12,7 +12,7 @@ public class AssignMovementState implements CliState {
     }
 
     @Override
-    public CliState input(String input) {
+    public State input(String input) {
         if(grid.getCleaningRobots().isEmpty()) {
             System.out.println("No robots to move.");
             return this;

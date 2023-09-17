@@ -2,11 +2,11 @@ package com.javier.usecases;
 
 import com.javier.entities.FactoryFloorGrid;
 
-public class CreateGridState implements CliState {
+public class CreateGridState implements State {
     private FactoryFloorGrid grid;
 
     @Override
-    public CliState input(String input) {
+    public State input(String input) {
         try {
             FactoryFloorGrid newGrid = FactoryFloorGrid.of(input);
             grid = newGrid;

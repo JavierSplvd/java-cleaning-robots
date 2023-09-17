@@ -3,6 +3,8 @@ package com.javier.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.javier.utils.Vector2;
+
 public class FactoryFloorGrid {
     private int maxX;
     private int maxY;

@@ -1,6 +1,7 @@
 package com.javier.entities;
 
-import com.javier.enums.Heading;
+import com.javier.utils.Heading;
+import com.javier.utils.Vector2;
 
 public class CleaningRobot {
     private Vector2 position;

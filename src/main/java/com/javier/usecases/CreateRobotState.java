@@ -3,7 +3,7 @@ package com.javier.usecases;
 import com.javier.entities.CleaningRobot;
 import com.javier.entities.FactoryFloorGrid;
 
-public class CreateRobotState implements CliState {
+public class CreateRobotState implements State {
     private final FactoryFloorGrid grid;
 
     public CreateRobotState(FactoryFloorGrid grid) {
@@ -11,12 +11,13 @@ public class CreateRobotState implements CliState {
     }
 
     @Override
-    public CliState input(String input) {
+    public State input(String input) {
         CleaningRobot robot = CleaningRobot.of(input);
         if (grid.isPositionValid(robot.position())) {
             grid.addCleaningRobot(robot);
         } else {
             System.out.println("Invalid position for robot.");
+            return this;
         }
         return new AssignMovementState(grid);
     }

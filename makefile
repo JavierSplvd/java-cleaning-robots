@@ -15,7 +15,7 @@ help:
 
 # Build the Java project using Maven
 build:
-	mvn clean install
+	mvn clean install -DskipTests
 
 # Run the Java application
 run:

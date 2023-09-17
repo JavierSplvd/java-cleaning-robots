@@ -12,7 +12,7 @@ public class AssignMovementStateTest {
     public void whenInput_shouldReturnCreateRobotState() {
         FactoryFloorGrid grid = FactoryFloorGrid.of("5 5");
         grid.addCleaningRobot(CleaningRobot.of("1 2 N"));
-        CliState state = new AssignMovementState(grid);
+        State state = new AssignMovementState(grid);
         state = state.input("LMLMLMLMM");
 
         assumeTrue(state.getGrid().getCleaningRobots().size() == 1);
@@ -27,7 +27,7 @@ public class AssignMovementStateTest {
         FactoryFloorGrid grid = FactoryFloorGrid.of("5 5");
         grid.addCleaningRobot(CleaningRobot.of("1 2 N"));
         grid.addCleaningRobot(CleaningRobot.of("4 4 N"));
-        CliState state = new AssignMovementState(grid);
+        State state = new AssignMovementState(grid);
         state = state.input("LMLMLMLMM");
 
         assumeTrue(state.getGrid().getCleaningRobots().size() == 1);
@@ -40,7 +40,7 @@ public class AssignMovementStateTest {
     @Test
     public void givenNoRobots_whenInput_shouldReturnTheSameState() {
         FactoryFloorGrid grid = FactoryFloorGrid.of("5 5");
-        CliState state = new AssignMovementState(grid);
+        State state = new AssignMovementState(grid);
         state = state.input("LMLMLMLMM");
 
         assert (state instanceof AssignMovementState);

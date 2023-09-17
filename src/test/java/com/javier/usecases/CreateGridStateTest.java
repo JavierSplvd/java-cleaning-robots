@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class CreateGridStateTest {
     @Test
     public void whenInput_shouldReturnCreateRobotState() {
-        CliState state = new CreateGridState();
+        State state = new CreateGridState();
         state = state.input("5 5");
 
         assert (state instanceof CreateRobotState);
@@ -17,7 +17,7 @@ public class CreateGridStateTest {
 
     @Test
     public void givenWrongInput_shouldThrow() {
-        CliState state = new CreateGridState();
+        State state = new CreateGridState();
 
         assertThrows(IllegalArgumentException.class, () -> {
             state.input("abc");
