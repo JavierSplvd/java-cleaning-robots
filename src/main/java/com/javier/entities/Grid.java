@@ -46,4 +46,11 @@ public class Grid {
     public List<CleaningRobot> getCleaningRobots() {
         return cleaningRobots;
     }
+
+    public static Grid of(String sizeAsText) {
+        String[] size = sizeAsText.split(" ");
+        int maxX = Integer.parseInt(size[0]);
+        int maxY = Integer.parseInt(size[1]);
+        return new Grid(maxX, maxY);
+    }
 }

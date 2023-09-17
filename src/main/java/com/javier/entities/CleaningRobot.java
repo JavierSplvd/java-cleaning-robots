@@ -32,16 +32,16 @@ public class CleaningRobot {
 
     public void moveForward() {
         switch (heading) {
-            case NORTH:
+            case N:
                 y++;
                 break;
-            case EAST:
+            case E:
                 x++;
                 break;
-            case SOUTH:
+            case S:
                 y--;
                 break;
-            case WEST:
+            case W:
                 x--;
                 break;
         }
@@ -49,35 +49,43 @@ public class CleaningRobot {
 
     public void rotateLeft() {
         switch (heading) {
-            case NORTH:
-                heading = Heading.WEST;
+            case N:
+                heading = Heading.W;
                 break;
-            case EAST:
-                heading = Heading.NORTH;
+            case E:
+                heading = Heading.N;
                 break;
-            case SOUTH:
-                heading = Heading.EAST;
+            case S:
+                heading = Heading.E;
                 break;
-            case WEST:
-                heading = Heading.SOUTH;
+            case W:
+                heading = Heading.S;
                 break;
         }
     }
 
     public void rotateRight() {
         switch (heading) {
-            case NORTH:
-                heading = Heading.EAST;
+            case N:
+                heading = Heading.E;
                 break;
-            case EAST:
-                heading = Heading.SOUTH;
+            case E:
+                heading = Heading.S;
                 break;
-            case SOUTH:
-                heading = Heading.WEST;
+            case S:
+                heading = Heading.W;
                 break;
-            case WEST:
-                heading = Heading.NORTH;
+            case W:
+                heading = Heading.N;
                 break;
         }
+    }
+
+    public static CleaningRobot of(String positionAsText) {
+        String[] position = positionAsText.split(" ");
+        int x = Integer.parseInt(position[0]);
+        int y = Integer.parseInt(position[1]);
+        Heading heading = Heading.valueOf(position[2]);
+        return new CleaningRobot(x, y, heading);
     }
 }

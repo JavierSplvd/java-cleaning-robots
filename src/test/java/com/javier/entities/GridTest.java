@@ -12,8 +12,8 @@ public class GridTest {
 
     @Test
     public void whenWithinBounds_shouldAddRobots() {
-        CleaningRobot cleaningRobot1 = new CleaningRobot(1, 1, Heading.NORTH);
-        CleaningRobot cleaningRobot2 = new CleaningRobot(2, 1, Heading.NORTH);
+        CleaningRobot cleaningRobot1 = new CleaningRobot(1, 1, Heading.N);
+        CleaningRobot cleaningRobot2 = new CleaningRobot(2, 1, Heading.N);
         grid.addCleaningRobot(cleaningRobot1);
         grid.addCleaningRobot(cleaningRobot2);
 
@@ -26,14 +26,14 @@ public class GridTest {
 
     @Test
     public void whenOutOfBounds_shouldThrowException() {
-        CleaningRobot cleaningRobot1 = new CleaningRobot(10, 10, Heading.NORTH);
+        CleaningRobot cleaningRobot1 = new CleaningRobot(10, 10, Heading.N);
         assertThrows(Exception.class, () -> grid.addCleaningRobot(cleaningRobot1));
     }
 
     @Test
     public void givenTwoRobots_whenSameCoordinates_shoudlThrowException() {
-        CleaningRobot cleaningRobot1 = new CleaningRobot(1, 1, Heading.NORTH);
-        CleaningRobot cleaningRobot2 = new CleaningRobot(1, 1, Heading.NORTH);
+        CleaningRobot cleaningRobot1 = new CleaningRobot(1, 1, Heading.N);
+        CleaningRobot cleaningRobot2 = new CleaningRobot(1, 1, Heading.N);
         grid.addCleaningRobot(cleaningRobot1);
         // check an exception is thrown
         assertThrows(Exception.class, () -> grid.addCleaningRobot(cleaningRobot2));

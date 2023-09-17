@@ -7,28 +7,28 @@ import com.javier.enums.Heading;
 public class CleaningRobotTest {
     @Test
     public void shouldMoveForward() {
-        CleaningRobot cleaningRobotNorth = new CleaningRobot(0, 0, Heading.NORTH);
+        CleaningRobot cleaningRobotNorth = new CleaningRobot(0, 0, Heading.N);
 
         cleaningRobotNorth.moveForward();
 
         assert cleaningRobotNorth.x() == 0;
         assert cleaningRobotNorth.y() == 1;
 
-        CleaningRobot cleaningRobotEast = new CleaningRobot(0, 0, Heading.EAST);
+        CleaningRobot cleaningRobotEast = new CleaningRobot(0, 0, Heading.E);
 
         cleaningRobotEast.moveForward();
 
         assert cleaningRobotEast.x() == 1;
         assert cleaningRobotEast.y() == 0;
 
-        CleaningRobot cleaningRobotSouth = new CleaningRobot(0, 0, Heading.SOUTH);
+        CleaningRobot cleaningRobotSouth = new CleaningRobot(0, 0, Heading.S);
 
         cleaningRobotSouth.moveForward();
 
         assert cleaningRobotSouth.x() == 0;
         assert cleaningRobotSouth.y() == -1;
 
-        CleaningRobot cleaningRobotWest = new CleaningRobot(0, 0, Heading.WEST);
+        CleaningRobot cleaningRobotWest = new CleaningRobot(0, 0, Heading.W);
 
         cleaningRobotWest.moveForward();
 
@@ -38,55 +38,55 @@ public class CleaningRobotTest {
 
     @Test
     public void shouldRotateLeft() {
-        CleaningRobot cleaningRobotNorth = new CleaningRobot(0, 0, Heading.NORTH);
+        CleaningRobot cleaningRobotNorth = new CleaningRobot(0, 0, Heading.N);
 
         cleaningRobotNorth.rotateLeft();
 
-        assert cleaningRobotNorth.heading() == Heading.WEST;
+        assert cleaningRobotNorth.heading() == Heading.W;
 
-        CleaningRobot cleaningRobotEast = new CleaningRobot(0, 0, Heading.EAST);
+        CleaningRobot cleaningRobotEast = new CleaningRobot(0, 0, Heading.E);
 
         cleaningRobotEast.rotateLeft();
 
-        assert cleaningRobotEast.heading() == Heading.NORTH;
+        assert cleaningRobotEast.heading() == Heading.N;
 
-        CleaningRobot cleaningRobotSouth = new CleaningRobot(0, 0, Heading.SOUTH);
+        CleaningRobot cleaningRobotSouth = new CleaningRobot(0, 0, Heading.S);
 
         cleaningRobotSouth.rotateLeft();
 
-        assert cleaningRobotSouth.heading() == Heading.EAST;
+        assert cleaningRobotSouth.heading() == Heading.E;
 
-        CleaningRobot cleaningRobotWest = new CleaningRobot(0, 0, Heading.WEST);
+        CleaningRobot cleaningRobotWest = new CleaningRobot(0, 0, Heading.W);
 
         cleaningRobotWest.rotateLeft();
 
-        assert cleaningRobotWest.heading() == Heading.SOUTH;
+        assert cleaningRobotWest.heading() == Heading.S;
     }
 
     @Test
     public void shouldRotateRight() {
-        CleaningRobot cleaningRobotNorth = new CleaningRobot(0, 0, Heading.NORTH);
+        CleaningRobot cleaningRobotNorth = new CleaningRobot(0, 0, Heading.N);
 
         cleaningRobotNorth.rotateRight();
 
-        assert cleaningRobotNorth.heading() == Heading.EAST;
+        assert cleaningRobotNorth.heading() == Heading.E;
 
-        CleaningRobot cleaningRobotEast = new CleaningRobot(0, 0, Heading.EAST);
+        CleaningRobot cleaningRobotEast = new CleaningRobot(0, 0, Heading.E);
 
         cleaningRobotEast.rotateRight();
 
-        assert cleaningRobotEast.heading() == Heading.SOUTH;
+        assert cleaningRobotEast.heading() == Heading.S;
 
-        CleaningRobot cleaningRobotSouth = new CleaningRobot(0, 0, Heading.SOUTH);
+        CleaningRobot cleaningRobotSouth = new CleaningRobot(0, 0, Heading.S);
 
         cleaningRobotSouth.rotateRight();
 
-        assert cleaningRobotSouth.heading() == Heading.WEST;
+        assert cleaningRobotSouth.heading() == Heading.W;
 
-        CleaningRobot cleaningRobotWest = new CleaningRobot(0, 0, Heading.WEST);
+        CleaningRobot cleaningRobotWest = new CleaningRobot(0, 0, Heading.W);
 
         cleaningRobotWest.rotateRight();
 
-        assert cleaningRobotWest.heading() == Heading.NORTH;
+        assert cleaningRobotWest.heading() == Heading.N;
     }
 }
