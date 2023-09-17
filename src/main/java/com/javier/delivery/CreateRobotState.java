@@ -13,7 +13,7 @@ public class CreateRobotState implements CliState {
     @Override
     public CliState input(String input) {
         CleaningRobot robot = CleaningRobot.of(input);
-        if (grid.isPositionValid(robot.x(), robot.y())) {
+        if (grid.isPositionValid(robot.position())) {
             grid.addCleaningRobot(robot);
         } else {
             System.out.println("Invalid position for robot.");

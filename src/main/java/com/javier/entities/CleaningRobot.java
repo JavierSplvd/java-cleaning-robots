@@ -3,48 +3,29 @@ package com.javier.entities;
 import com.javier.enums.Heading;
 
 public class CleaningRobot {
-    private int x;
-    private int y;
+    private Vector2 position;
     private Heading heading;
 
     public CleaningRobot(int x, int y, Heading heading) {
-        this.x = x;
-        this.y = y;
+        this.position = new Vector2(x, y);
         this.heading = heading;
     }
 
     @Override
     public String toString() {
-        return String.format("%d %d %s", x, y, heading);
+        return String.format("%d %d %s", position.x(), position.y(), heading);
     }
 
-    public int x() {
-        return x;
-    }
-
-    public int y() {
-        return y;
+    public Vector2 position() {
+        return position;
     }
 
     public Heading heading() {
         return heading;
     }
 
-    public void moveForward() {
-        switch (heading) {
-            case N:
-                y++;
-                break;
-            case E:
-                x++;
-                break;
-            case S:
-                y--;
-                break;
-            case W:
-                x--;
-                break;
-        }
+    public void moveForward(MoveForwardAction action) {
+        this.position = action.getNewPosition();
     }
 
     public void rotateLeft() {

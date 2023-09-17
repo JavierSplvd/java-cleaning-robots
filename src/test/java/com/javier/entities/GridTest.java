@@ -18,10 +18,10 @@ public class GridTest {
         grid.addCleaningRobot(cleaningRobot2);
 
         assertTrue(grid.getCleaningRobots().size() == 2);
-        assertTrue(grid.getCleaningRobots().get(0).x() == 1);
-        assertTrue(grid.getCleaningRobots().get(0).y() == 1);
-        assertTrue(grid.getCleaningRobots().get(1).x() == 2);
-        assertTrue(grid.getCleaningRobots().get(1).y() == 1);
+        assertTrue(grid.getCleaningRobots().get(0).position().x() == 1);
+        assertTrue(grid.getCleaningRobots().get(0).position().y() == 1);
+        assertTrue(grid.getCleaningRobots().get(1).position().x() == 2);
+        assertTrue(grid.getCleaningRobots().get(1).position().y() == 1);
     }
 
     @Test

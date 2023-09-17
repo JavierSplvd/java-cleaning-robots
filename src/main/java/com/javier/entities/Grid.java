@@ -22,13 +22,16 @@ public class Grid {
         return maxY;
     }
 
-    public boolean isPositionValid(int x, int y) {
+    public boolean isPositionValid(Vector2 position) {
+        int x = position.x();
+        int y = position.y();
+
         boolean outOfBounds = x > maxX || y > maxY;
         if (outOfBounds) {
             return false;
         }
         for (CleaningRobot robot : cleaningRobots) {
-            boolean samePosition = robot.x() == x && robot.y() == y;
+            boolean samePosition = robot.position().x() == x && robot.position().y() == y;
             if (samePosition) {
                 return false;
             }
@@ -37,7 +40,7 @@ public class Grid {
     }
 
     public void addCleaningRobot(CleaningRobot cleaningRobot) {
-        if (!isPositionValid(cleaningRobot.x(), cleaningRobot.y())) {
+        if (!isPositionValid(cleaningRobot.position())) {
             throw new IllegalArgumentException("Invalid position");
         }
         cleaningRobots.add(cleaningRobot);

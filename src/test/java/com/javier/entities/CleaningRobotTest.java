@@ -9,31 +9,35 @@ public class CleaningRobotTest {
     public void shouldMoveForward() {
         CleaningRobot cleaningRobotNorth = new CleaningRobot(0, 0, Heading.N);
 
-        cleaningRobotNorth.moveForward();
+        cleaningRobotNorth
+                .moveForward(new MoveForwardAction(cleaningRobotNorth.position(), cleaningRobotNorth.heading()));
 
-        assert cleaningRobotNorth.x() == 0;
-        assert cleaningRobotNorth.y() == 1;
+        assert cleaningRobotNorth.position().x() == 0;
+        assert cleaningRobotNorth.position().y() == 1;
 
         CleaningRobot cleaningRobotEast = new CleaningRobot(0, 0, Heading.E);
 
-        cleaningRobotEast.moveForward();
+        cleaningRobotEast.moveForward(
+                new MoveForwardAction(cleaningRobotEast.position(), cleaningRobotEast.heading()));
 
-        assert cleaningRobotEast.x() == 1;
-        assert cleaningRobotEast.y() == 0;
+        assert cleaningRobotEast.position().x() == 1;
+        assert cleaningRobotEast.position().y() == 0;
 
         CleaningRobot cleaningRobotSouth = new CleaningRobot(0, 0, Heading.S);
 
-        cleaningRobotSouth.moveForward();
+        cleaningRobotSouth.moveForward(
+                new MoveForwardAction(cleaningRobotSouth.position(), cleaningRobotSouth.heading()));
 
-        assert cleaningRobotSouth.x() == 0;
-        assert cleaningRobotSouth.y() == -1;
+        assert cleaningRobotSouth.position().x() == 0;
+        assert cleaningRobotSouth.position().y() == -1;
 
         CleaningRobot cleaningRobotWest = new CleaningRobot(0, 0, Heading.W);
 
-        cleaningRobotWest.moveForward();
+        cleaningRobotWest.moveForward(
+                new MoveForwardAction(cleaningRobotWest.position(), cleaningRobotWest.heading()));
 
-        assert cleaningRobotWest.x() == -1;
-        assert cleaningRobotWest.y() == 0;
+        assert cleaningRobotWest.position().x() == -1;
+        assert cleaningRobotWest.position().y() == 0;
     }
 
     @Test

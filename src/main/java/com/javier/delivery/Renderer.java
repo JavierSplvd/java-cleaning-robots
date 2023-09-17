@@ -10,7 +10,7 @@ public class Renderer {
         int i = 0;
         for (CleaningRobot robot : grid.getCleaningRobots()) {
             i++;
-            String message = String.format("Robot %s: %s %s %s", i, robot.x(), robot.y(),
+            String message = String.format("Robot %s: %s %s %s", i, robot.position().x(), robot.position().y(),
                     robot.heading());
             System.out.println(message);
         }

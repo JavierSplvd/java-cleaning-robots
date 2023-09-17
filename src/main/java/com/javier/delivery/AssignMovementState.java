@@ -2,6 +2,7 @@ package com.javier.delivery;
 
 import com.javier.entities.CleaningRobot;
 import com.javier.entities.Grid;
+import com.javier.entities.MoveForwardAction;
 
 public class AssignMovementState implements CliState {
     private final Grid grid;
@@ -22,8 +23,9 @@ public class AssignMovementState implements CliState {
                     robot.rotateRight();
                     break;
                 case 'M':
-                    if(grid.isPositionValid(robot.x(), robot.y())) {
-                        robot.moveForward();
+                    MoveForwardAction action = new MoveForwardAction(robot.position(), robot.heading());
+                    if (grid.isPositionValid(action.getNewPosition())) {
+                        robot.moveForward(action);
                     }
                     break;
                 default:
