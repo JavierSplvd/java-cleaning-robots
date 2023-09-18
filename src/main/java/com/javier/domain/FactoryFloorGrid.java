@@ -26,7 +26,7 @@ public class FactoryFloorGrid {
         int x = position.x();
         int y = position.y();
 
-        boolean outOfBounds = x > maxX || y > maxY;
+        boolean outOfBounds = x > maxX || y > maxY || x < 0 || y < 0;
         if (outOfBounds) {
             return false;
         }

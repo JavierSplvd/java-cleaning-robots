@@ -24,8 +24,17 @@ public class FactoryFloorGridTest {
 
     @Test
     public void whenOutOfBounds_shouldThrowException() {
-        CleaningRobot cleaningRobot1 = new CleaningRobot(10, 10, Heading.N);
+        CleaningRobot cleaningRobot1 = new CleaningRobot(10, 0, Heading.N);
         assertThrows(Exception.class, () -> grid.addCleaningRobot(cleaningRobot1));
+
+        CleaningRobot cleaningRobot2 = new CleaningRobot(-10, 0, Heading.N);
+        assertThrows(Exception.class, () -> grid.addCleaningRobot(cleaningRobot2));
+
+        CleaningRobot cleaningRobot3 = new CleaningRobot(0, 10, Heading.N);
+        assertThrows(Exception.class, () -> grid.addCleaningRobot(cleaningRobot3));
+
+        CleaningRobot cleaningRobot4 = new CleaningRobot(0, -10, Heading.N);
+        assertThrows(Exception.class, () -> grid.addCleaningRobot(cleaningRobot4));
     }
 
     @Test

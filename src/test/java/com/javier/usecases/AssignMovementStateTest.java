@@ -1,5 +1,6 @@
 package com.javier.usecases;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.Test;
@@ -18,8 +19,8 @@ public class AssignMovementStateTest {
         assumeTrue(state.getGrid().getCleaningRobots().size() == 1);
 
         assert (state instanceof CreateRobotState);
-        assert (state.getGrid().getCleaningRobots().get(0).position().x() == 1);
-        assert (state.getGrid().getCleaningRobots().get(0).position().y() == 3);
+        assertEquals(state.getGrid().getCleaningRobots().get(0).position().x(), 1);
+        assertEquals(state.getGrid().getCleaningRobots().get(0).position().y(), 3);
     }
 
     @Test
@@ -30,11 +31,11 @@ public class AssignMovementStateTest {
         State state = new AssignMovementState(grid);
         state = state.input("LMLMLMLMM");
 
-        assumeTrue(state.getGrid().getCleaningRobots().size() == 1);
+        assumeTrue(state.getGrid().getCleaningRobots().size() == 2);
 
         assert (state instanceof CreateRobotState);
-        assert (state.getGrid().getCleaningRobots().get(1).position().x() == 1);
-        assert (state.getGrid().getCleaningRobots().get(1).position().y() == 3);
+        assertEquals(state.getGrid().getCleaningRobots().get(1).position().x(), 4);
+        assertEquals(state.getGrid().getCleaningRobots().get(1).position().y(), 5);
     }
 
     @Test

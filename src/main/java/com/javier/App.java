@@ -1,11 +1,11 @@
 package com.javier;
 
-import com.javier.delivery.CliPresenter;
 import com.javier.delivery.Presenter;
+import com.javier.delivery.PresenterFactory;
 
 public class App {
     public static void main(String[] args) {
-        Presenter presenter = new CliPresenter();
+        Presenter presenter = PresenterFactory.create();
         presenter.render();
     }
 }

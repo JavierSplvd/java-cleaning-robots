@@ -4,13 +4,18 @@ import java.util.Scanner;
 
 import com.javier.domain.CleaningRobot;
 import com.javier.domain.FactoryFloorGrid;
-import com.javier.usecases.CreateGridState;
 import com.javier.usecases.State;
 
 public class CliPresenter implements Presenter {
+    private State state;
+    private final Scanner scanner;
+
+    public CliPresenter(Scanner scanner, State state) {
+        this.scanner = scanner;
+        this.state = state;
+    }
+
     public void render() {
-        Scanner scanner = new Scanner(System.in);
-        State state = new CreateGridState();
 
         while (true) {
             String input = scanner.nextLine();
@@ -23,18 +28,15 @@ public class CliPresenter implements Presenter {
         if (state.getGrid() != null) {
             printFormatted(state.getGrid());
         } else {
-            System.out.println("No grid created.");
+            throw new RuntimeException("No grid found");
         }
-        scanner.close();
     }
 
     void printFormatted(FactoryFloorGrid grid) {
-        System.out.println("Grid size: " + grid.getMaxX() + "x" + grid.getMaxY());
+        System.out.println(grid.getMaxX() + " " + grid.getMaxY());
 
-        int i = 0;
         for (CleaningRobot robot : grid.getCleaningRobots()) {
-            i++;
-            String message = String.format("Robot %s: %s %s %s", i, robot.position().x(), robot.position().y(),
+            String message = String.format("%s %s %s", robot.position().x(), robot.position().y(),
                     robot.heading());
             System.out.println(message);
         }
