@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-import com.javier.entities.FactoryFloorGrid;
-import com.javier.utils.Heading;
+import com.javier.domain.FactoryFloorGrid;
+import com.javier.domain.Heading;
 
 public class CreateRobotStateTest {
     @Test

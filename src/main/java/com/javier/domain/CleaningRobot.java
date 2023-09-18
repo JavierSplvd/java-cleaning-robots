@@ -1,7 +1,4 @@
-package com.javier.entities;
-
-import com.javier.utils.Heading;
-import com.javier.utils.Vector2;
+package com.javier.domain;
 
 public class CleaningRobot {
     private Vector2 position;

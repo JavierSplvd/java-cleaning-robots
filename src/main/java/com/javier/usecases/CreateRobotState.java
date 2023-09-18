@@ -1,7 +1,7 @@
 package com.javier.usecases;
 
-import com.javier.entities.CleaningRobot;
-import com.javier.entities.FactoryFloorGrid;
+import com.javier.domain.CleaningRobot;
+import com.javier.domain.FactoryFloorGrid;
 
 public class CreateRobotState implements State {
     private final FactoryFloorGrid grid;

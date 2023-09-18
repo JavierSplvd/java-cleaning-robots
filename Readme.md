@@ -2,9 +2,13 @@
 
 [![codecov](https://codecov.io/gh/JavierSplvd/java-cleaning-robots/graph/badge.svg?token=0JXJYC79OD)](https://codecov.io/gh/JavierSplvd/java-cleaning-robots)
 
-This is my solution for the exercise of the cleaning robots. I have used Java 20 as the programming language and JUnit 5 for the tests.
+This is my solution for the exercise of the cleaning robots. I have used Java 20 as the programming language and JUnit 5 for the tests. The main reason to use Java instead of Kotlin is the better support of VS Code, but also because I have more recent experience with Java.
 
-The code is split into entities and delivery. The entities are the objects that are used in the application, like the robot or the factory. The delivery is the code that is used to run the application, like the input handling.
+The code is split in the following packages:
+- Delivery: Contains the classes that interact with the user and the domain classes.
+- Domain: contains the entities and utilities of the business logic.
+- Use cases: contains the actions that the user will perform with the application.
+- Tests: contains the unit tests of the application.
 
 # Requirements
 
@@ -28,7 +32,7 @@ For this project I will use Windows OS and Powershell as the command line interf
 
 In order to simplify the execution of the project I have created a makefile with the following commands:
 
-To run the tests:
+You can check the different commands with `make help`. To run the tests:
 
 ```
 make test
@@ -41,8 +45,7 @@ make build
 make run
 ```
 
-You can check the different commands with `make help`.
-
+Once you run the application you can input exit to finish the execution and get a summary of the robots.
 
 # Future improvements
 

@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.Test;
 
-import com.javier.entities.CleaningRobot;
-import com.javier.entities.FactoryFloorGrid;
+import com.javier.domain.CleaningRobot;
+import com.javier.domain.FactoryFloorGrid;
 
 public class AssignMovementStateTest {
     @Test

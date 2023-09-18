@@ -1,10 +1,12 @@
-package com.javier.entities;
+package com.javier.domain;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-import com.javier.utils.Heading;
+import com.javier.domain.CleaningRobot;
+import com.javier.domain.Heading;
+import com.javier.domain.MoveForwardAction;
 
 public class CleaningRobotTest {
     @Test

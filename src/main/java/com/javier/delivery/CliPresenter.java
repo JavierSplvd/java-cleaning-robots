@@ -2,8 +2,8 @@ package com.javier.delivery;
 
 import java.util.Scanner;
 
-import com.javier.entities.CleaningRobot;
-import com.javier.entities.FactoryFloorGrid;
+import com.javier.domain.CleaningRobot;
+import com.javier.domain.FactoryFloorGrid;
 import com.javier.usecases.CreateGridState;
 import com.javier.usecases.State;
 

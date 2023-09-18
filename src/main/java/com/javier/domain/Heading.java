@@ -1,4 +1,4 @@
-package com.javier.utils;
+package com.javier.domain;
 
 public enum Heading {
     N,

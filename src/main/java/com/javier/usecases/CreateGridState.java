@@ -1,6 +1,6 @@
 package com.javier.usecases;
 
-import com.javier.entities.FactoryFloorGrid;
+import com.javier.domain.FactoryFloorGrid;
 
 public class CreateGridState implements State {
     private FactoryFloorGrid grid;

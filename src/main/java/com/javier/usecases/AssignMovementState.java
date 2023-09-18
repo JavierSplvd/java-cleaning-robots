@@ -1,8 +1,8 @@
 package com.javier.usecases;
 
-import com.javier.entities.CleaningRobot;
-import com.javier.entities.FactoryFloorGrid;
-import com.javier.entities.MoveForwardAction;
+import com.javier.domain.CleaningRobot;
+import com.javier.domain.FactoryFloorGrid;
+import com.javier.domain.MoveForwardAction;
 
 public class AssignMovementState implements State {
     private final FactoryFloorGrid grid;
