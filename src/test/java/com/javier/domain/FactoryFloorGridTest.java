@@ -5,10 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import com.javier.domain.CleaningRobot;
-import com.javier.domain.FactoryFloorGrid;
-import com.javier.domain.Heading;
-
 public class FactoryFloorGridTest {
     private FactoryFloorGrid grid = new FactoryFloorGrid(5, 5);
 
